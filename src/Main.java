@@ -16,9 +16,10 @@ public class Main {
 
     static Point getInputPoint(String Prompt) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter Your Name: ");
-        String name = sc.next();
-        System.out.printf("Hello and welcome, " + name);
-
-        }
+        System.out.println(Prompt);
+        String[] tokens = sc.nextLine().split("[,]+");
+        double x = Double.parseDouble(tokens[0]);
+        double y = Double.parseDouble(tokens[1]);
+        return new Point(x,y);
     }
+}

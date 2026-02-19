@@ -4,7 +4,7 @@ public class Main {
         Point pt = getInputPoint("Please enter as x,y: ");
         Rectangle upperRect = new Rectangle(new Point(2, 3), new Point(24, 19));
         Rectangle lowerRect = new Rectangle(new Point(7, -5), new Point(18, 3));
-        Circle c1 = new Circle(new Point(2,2),10); //Used to be more here, but it was giving me issues
+        Circle c1 = new Circle(new Point(2,2),10);
 
         if (upperRect.contains(pt )) {
             System.out.println("The point is in the upper rectangle");

@@ -1,8 +1,5 @@
 public class Simulation {
     public Simulation(){
-
-    }
-    public create_new_hospital(){
-        Hospital hospital = new Hospital();
+        Hospital hospital1 = new Hospital();
     }
 }

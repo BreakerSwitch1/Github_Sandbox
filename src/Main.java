@@ -2,6 +2,11 @@ import java.util.Scanner;
 public class Main {
     static Simulation sim = new Simulation();
     public static void main(String[] args) {
+        Hospital hospital2 = new Hospital();
+        Patient j_patient = new Patient("Joseph Smith", Patient.Sex.male,"1234","06/26/2006");
+        hospital2.add_patient(j_patient);
+        hospital2.print_test();
+
     }
 
     static Point getInputPoint(String Prompt) {

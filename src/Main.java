@@ -3,8 +3,10 @@ public class Main {
     static Simulation sim = new Simulation();
     public static void main(String[] args) {
         Hospital hospital2 = new Hospital();
-        Patient j_patient = new Patient("Joseph Smith", Patient.Sex.male,"1234","06/26/2006");
+        Patient j_patient = new Patient("Joseph","Smith", Patient.Sex.male,"1234","06/26/2006");
+        Patient e_patient = new Patient("Elias","Doe",Patient.Sex.male,"1235","05/24/2007");
         hospital2.add_patient(j_patient);
+        hospital2.add_patient(e_patient);
         hospital2.print_test();
 
     }

@@ -10,16 +10,16 @@ public class Hospital {
 
     public void print_test() {
         for (int i = 0; i < patients.length; i++) {
-            Patient p = patients[i]
+            Patient p = patients[i];
             if (patients[i] != null) {
-                System.out.println("Name: " +p.getPatient_name()+ "Sex: " +p.getPatient_sex()+);
+                System.out.println("Name: " +p.getPatient_firstname()+ " " +p.getPatient_lastname()+ " Sex: " +p.getPatient_sex()+ " ");
             }
         }
     }
 
     public void add_patient(Patient patient) {
         for(int i = 0; i<patients.length; i++){
-            if(patients[i] == null){
+            if(patients[i] == null && patients[i] != patient){
                 patients[i] = patient;
             }
         }

@@ -21,6 +21,7 @@ public class Hospital {
         for(int i = 0; i<patients.length; i++){
             if(patients[i] == null && patients[i] != patient){
                 patients[i] = patient;
+                return;
             }
         }
     }

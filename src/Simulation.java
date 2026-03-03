@@ -3,6 +3,6 @@ public class Simulation {
 
     }
     public create_new_hospital(){
-        Hospital
+        Hospital hospital = new Hospital();
     }
 }

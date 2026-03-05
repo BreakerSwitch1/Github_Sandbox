@@ -17,6 +17,12 @@ public class Hospital {
         }
     }
 
+    public void update(){
+        for(int i = 0; i<patients.length; i++){
+            patients[i].readDevices();
+        }
+    }
+
     public void add_patient(Patient patient) {
         for(int i = 0; i<patients.length; i++){
             if(patients[i] == null && patients[i] != patient){

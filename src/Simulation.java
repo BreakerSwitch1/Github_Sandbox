@@ -2,7 +2,7 @@ public class Simulation {
     public Simulation(){
 
     }
-    public create_new_hospital(){
+    public void create_new_hospital(){
         Hospital hospital = new Hospital();
     }
 }

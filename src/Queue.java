@@ -1,6 +1,7 @@
 public class Queue {
-    public void enqueue(Alert al){
-        QueueRecord rec = new QueueRecord(al);
+    public Queue(){};
+    public void enqueue(Alert obj){
+        QueueRecord rec = new QueueRecord(obj);
         if(tail != null){
             tail.next = rec;
             tail = rec;
@@ -14,16 +15,11 @@ public class Queue {
     public Alert dequeue(){
 
     }
-    public Alert peek(){
 
-    }
-    public int count(){
-
-    }
 
     // Inner or Nested Class
     private class QueueRecord(Alert al){
-        public Alert alert;
+        public Alert Alert;
         public QueueRecord next;
     }
 

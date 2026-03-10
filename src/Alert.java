@@ -1,3 +1,4 @@
+import java.util.Queue;
 public class Alert {
     private String patient_uuid;
     private Observation observation;
@@ -11,4 +12,5 @@ public class Alert {
     public void getAlertInfo(){
 
     }
+
 }

@@ -2,6 +2,8 @@ public class Simulation {
     public Simulation(){
         run();
     }
+    public void create_new_hospital(){
+        Hospital hospital = new Hospital();
 
     public void run(){
         double StartTime = 0.0;

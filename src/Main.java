@@ -1,7 +1,10 @@
 import java.util.Scanner;
 public class Main {
-    static Simulation sim = new Simulation();
+    //static Simulation sim = new Simulation();
     public static void main(String[] args) {
+        Simulation sim = new Simulation();
+        sim.run();
+
     }
 
     static Point getInputPoint(String Prompt) {

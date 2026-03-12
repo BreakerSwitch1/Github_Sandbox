@@ -43,5 +43,9 @@ public class Patient {
         return(""+first_name+ "" +last_name+ "," +sex+ "," +uuid+ ",");
 
     }
+    //Factory
+    static Patient makePatient(){
+        return new Patient("Joseph","Smith",Sex.male,"06/26/2006",new TemperatureMonitor());
+    }
 
 }

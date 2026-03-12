@@ -1,14 +1,13 @@
 public class Queue {
     public Queue(){
-        Queue queue = new Queue();
-        int[] times = {5,10,15,20,25,30};
+        int[] times = {1,2,3,4,5,6};
         for(int i = 0; i<times.length; i++){
-            queue.enqueue(new Alert(null,null,times[i]));
+            this.enqueue(new Alert(null,null,times[i]));
         }
     }
 
     public void enqueue(Alert al){
-        QueueRecord rec = new QueueRecord();
+        QueueRecord rec = new QueueRecord(al);
         if(tail != null){
             tail.next = rec;
             tail = rec;
@@ -33,8 +32,11 @@ public class Queue {
 
     // Inner or Nested Class
     private class QueueRecord{
-        public Alert Alert;
+        public Alert alert;
         public QueueRecord next;
+        public QueueRecord(Alert al){
+            alert = al;
+        }
     }
 
     private QueueRecord head, tail;

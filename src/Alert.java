@@ -3,8 +3,12 @@ public class Alert {
     private Patient patient;
     private Observation observation;
     private int starting_time;
-    public Alert(Patient pa, Observation obs, int time){
-        int start_time = time;
+    private int importance;
+    public Alert(Observation obs, int time, int priority){
+        starting_time = time;
+        observation = obs;
+        importance = priority;
+
     }
 
     public void getAlertInfo(){

@@ -1,9 +1,7 @@
 public class Queue {
     public Queue(){
         int[] times = {1,2,3,4,5,6};
-        for(int i = 0; i<times.length; i++){
-            this.enqueue(new Alert(null,null,times[i]));
-        }
+
     }
 
     public void enqueue(Alert al){

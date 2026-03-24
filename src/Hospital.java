@@ -1,10 +1,16 @@
+import java.util.Queue;
 import java.util.Scanner;
 import java.io.*;
 public class Hospital {
     private Patient[] patients;
+    private Queue highPriorityQueue;
+    private Queue lowPriorityQueue;
+    private Queue resolvedQueue;
 
     public Hospital() {
-        Queue q = new Queue();
+        Queue q1 = highPriorityQueue;
+        Queue q2 = lowPriorityQueue;
+        Queue resolved = resolvedQueue;
     }
 
     public void hospital_setup(int patient_count){
@@ -24,18 +30,9 @@ public class Hospital {
         }
     }
 
-    public void update(double cur_time){
+    public void update(int cur_time){
         for(int i = 0; i<patients.length; i++){
-            patients[i].readDevices();
-        }
-    }
-
-    public void add_patient(Patient patient) {
-        for(int i = 0; i<patients.length; i++){
-            if(patients[i] == null && patients[i] != patient){
-                patients[i] = patient;
-                return;
-            }
+            patients[i].update(cur_time);
         }
     }
 }

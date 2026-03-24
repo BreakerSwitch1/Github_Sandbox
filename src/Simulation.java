@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.Random;
+import java.util.random.RandomGenerator;
 
 public class Simulation {
     private Hospital hospital;
@@ -7,6 +9,7 @@ public class Simulation {
     private final int EndTime = 1440;
     private final int TimeIncrement = 5;
     int PatientCount = 5;
+    int NurseCount = 6;
     public Simulation(){
         setup();
         //run();
@@ -16,7 +19,7 @@ public class Simulation {
 
     public void setup(){
         hospital = new Hospital();
-        hospital.hospital_setup(PatientCount);
+        hospital.hospital_setup(PatientCount,NurseCount);
     }
     public void run(boolean manual_step){
         if(manual_step == true){

@@ -1,8 +1,11 @@
 import java.util.Queue;
+import java.util.Random;
 import java.util.Scanner;
 import java.io.*;
 public class Hospital {
     private Patient[] patients;
+    private Nurse[] nurses;
+    Random rng = new Random();
     private Queue highPriorityQueue;
     private Queue lowPriorityQueue;
     private Queue resolvedQueue;
@@ -13,11 +16,16 @@ public class Hospital {
         Queue resolved = resolvedQueue;
     }
 
-    public void hospital_setup(int patient_count){
+    public void hospital_setup(int patient_count, int nurse_count){
         patients = new Patient[patient_count];
         for(int i = 0; i<patients.length; i++){
             patients[i] = Patient.makePatient();
             patients[i].addDevice(new TemperatureMonitor());
+        }
+
+        nurses = new Nurse[nurse_count];
+        for(int n = 0; n<nurses.length; n++){
+            nurses[n] = Nurse.makeNurse(rng.nextInt(1,4));
         }
     }
 
@@ -33,6 +41,7 @@ public class Hospital {
     public void update(int cur_time){
         for(int i = 0; i<patients.length; i++){
             patients[i].update(cur_time);
+            nurses[i].update_nurse(cur_time);
         }
     }
 }

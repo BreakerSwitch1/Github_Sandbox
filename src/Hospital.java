@@ -38,10 +38,17 @@ public class Hospital {
         }
     }
 
-    public void update(int cur_time){
-        for(int i = 0; i<patients.length; i++){
-            patients[i].update(cur_time);
-            nurses[i].update_nurse(cur_time);
+    public void update(int cur_time) {
+        for (int i = 0; i < patients.length; i++) {
+            patients[i].update(cur_time, this);
+        }
+        for(int n = 0; n < nurses.length; n++){
+            nurses[n].update_nurse(cur_time);
+        }
+    }
+
+    public void alert_enqueue(Alert al){
+        if(al.getImportance() == 3){
         }
     }
 }

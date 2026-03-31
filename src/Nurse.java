@@ -7,7 +7,7 @@ public class Nurse {
         experienceLevel = exp_level;
     }
     public void update_nurse(int current_time){
-
+        System.out.println(current_time);
     }
     static Nurse makeNurse(int exp_level){
         return new Nurse(exp_level);

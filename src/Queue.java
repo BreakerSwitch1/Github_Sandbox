@@ -1,7 +1,5 @@
 public class Queue {
     public Queue(){
-        int[] times = {1,2,3,4,5,6};
-
     }
 
     public void enqueue(Alert al){
@@ -16,6 +14,7 @@ public class Queue {
             }
         }
     }
+
     public Alert dequeue(){
         if(head != null){
             return null;

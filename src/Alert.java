@@ -4,6 +4,7 @@ public class Alert {
     private Observation observation;
     private int starting_time;
     private int importance;
+    int getImportance(){return importance;}
     public Alert(Observation obs, int time, int priority){
         starting_time = time;
         observation = obs;

@@ -7,9 +7,7 @@ public class Hospital {
     private Patient[] patients;
     private Nurse[] nurses;
     Random rng = new Random();
-    private Queue alertQueue = new Queue() {
-    };
-    private Queue highPriorityQueue
+    private Queue highPriorityQueue;
     private Queue lowPriorityQueue;
     private Queue resolvedQueue;
 
@@ -33,7 +31,8 @@ public class Hospital {
     }
 
     public Alert getNextAlert(){
-        if(highPriorityQueue)
+        //if(highPriorityQueue)
+        return new Alert(new Temperature(1),1,1);
     }
 
     public void print_test() {

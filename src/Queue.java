@@ -1,4 +1,6 @@
 public class Queue {
+    private QueueRecord head;
+    private QueueRecord tail;
     public Queue(){
     }
 
@@ -36,8 +38,6 @@ public class Queue {
         }
     }
 
-    private QueueRecord head, tail;
-
     public int count(){
         int ct = 0;
         QueueRecord rec = head;
@@ -46,5 +46,12 @@ public class Queue {
             rec = rec.next;
         }
         return ct;
+    }
+
+    public Alert peek(){
+        if(head==null){
+            return null;
+        }
+        return head.alert;
     }
 }

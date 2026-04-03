@@ -1,3 +1,4 @@
+import java.util.AbstractQueue;
 import java.util.Queue;
 import java.util.Random;
 import java.util.Scanner;
@@ -6,7 +7,9 @@ public class Hospital {
     private Patient[] patients;
     private Nurse[] nurses;
     Random rng = new Random();
-    private Queue highPriorityQueue;
+    private Queue alertQueue = new Queue() {
+    };
+    private Queue highPriorityQueue
     private Queue lowPriorityQueue;
     private Queue resolvedQueue;
 
@@ -25,8 +28,12 @@ public class Hospital {
 
         nurses = new Nurse[nurse_count];
         for(int n = 0; n<nurses.length; n++){
-            nurses[n] = Nurse.makeNurse(rng.nextInt(1,4));
+            nurses[n] = new Nurse(java.util.UUID.randomUUID(), this.getNextAlert(), rng.nextDouble(1,4));
         }
+    }
+
+    public Alert getNextAlert(){
+        if(highPriorityQueue)
     }
 
     public void print_test() {

@@ -1,4 +1,8 @@
 public class BloodPressure extends Observation{
+    private double value;
+    public BloodPressure(double val){
+        value = val;
+    }
     public boolean emergency(){
         return false;
     }
@@ -6,4 +10,3 @@ public class BloodPressure extends Observation{
         return false;
     }
 }
-

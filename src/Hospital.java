@@ -1,7 +1,5 @@
-import java.util.AbstractQueue;
 import java.util.Queue;
 import java.util.Random;
-import java.util.Scanner;
 import java.io.*;
 public class Hospital {
     private Patient[] patients;

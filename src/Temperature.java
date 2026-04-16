@@ -1,7 +1,8 @@
 import java.util.Random;
 public class Temperature extends Observation{
     private double value;
-    public Temperature(double v){
+    public Temperature(double v,int tm){
+        super(tm);
         value = v;
     }
     public boolean emergency(){

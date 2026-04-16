@@ -5,14 +5,13 @@ import java.util.random.RandomGenerator;
 
 public class Simulation {
     private Hospital hospital;
-    double StartTime = 0.0;
     private int CurrentTime = 0;//Time in Minutes
     private final int EndTime = 1440;
     private final int TimeIncrement = 5;
     int PatientCount = 1;
     int NurseCount = 6;
+    int getTime(){return CurrentTime;}
     public Simulation(){
-        setup();
         //run();
     }
     public void create_new_hospital(){

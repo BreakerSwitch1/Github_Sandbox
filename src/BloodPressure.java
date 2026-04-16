@@ -1,6 +1,7 @@
 public class BloodPressure extends Observation{
     private double value;
-    public BloodPressure(double val){
+    public BloodPressure(double val, int tm){
+        super(tm);
         value = val;
     }
     public boolean emergency(){

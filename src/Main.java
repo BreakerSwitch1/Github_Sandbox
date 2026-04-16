@@ -1,7 +1,9 @@
 import java.util.Scanner;
 public class Main {
-    public static Simulation sim = new Simulation();
+    public static Simulation sim; //= new Simulation();
     public static void main(String[] args) {
+        sim = new Simulation();
+        sim.setup();
         boolean ms = should_use_manual_step();
         sim.run(ms);
     }

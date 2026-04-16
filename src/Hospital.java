@@ -30,7 +30,7 @@ public class Hospital {
 
     public Alert getNextAlert(){
         //if(highPriorityQueue)
-        return new Alert(new Temperature(1),1,1);
+        return new Alert(new Temperature(1,Main.sim.getTime()),1,1);
     }
 
     public void print_test() {

@@ -1,3 +1,4 @@
+import java.sql.Time;
 import java.util.Scanner;
 import java.util.Random;
 import java.util.random.RandomGenerator;
@@ -8,7 +9,7 @@ public class Simulation {
     private int CurrentTime = 0;//Time in Minutes
     private final int EndTime = 1440;
     private final int TimeIncrement = 5;
-    int PatientCount = 5;
+    int PatientCount = 1;
     int NurseCount = 6;
     public Simulation(){
         setup();
@@ -33,6 +34,15 @@ public class Simulation {
                 if(n == true){
                     block_num +=1;
                 }
+            }
+        }else{
+            int block_num = 1;
+            System.out.println("You are using automatic mode!");
+            while(CurrentTime<=EndTime){
+                System.out.println("Block " +block_num+ " Start");
+                hospital.update(CurrentTime);
+                CurrentTime += TimeIncrement;
+                block_num +=1;
             }
         }
     }

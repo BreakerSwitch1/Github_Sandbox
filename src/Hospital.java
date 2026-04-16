@@ -1,6 +1,5 @@
 import java.util.Queue;
 import java.util.Random;
-import java.util.Scanner;
 import java.io.*;
 public class Hospital {
     private Patient[] patients;
@@ -25,8 +24,13 @@ public class Hospital {
 
         nurses = new Nurse[nurse_count];
         for(int n = 0; n<nurses.length; n++){
-            nurses[n] = Nurse.makeNurse(rng.nextInt(1,4));
+            nurses[n] = new Nurse(java.util.UUID.randomUUID(), this.getNextAlert(), rng.nextDouble(1,4));
         }
+    }
+
+    public Alert getNextAlert(){
+        //if(highPriorityQueue)
+        return new Alert(new Temperature(1),1,1);
     }
 
     public void print_test() {
@@ -38,10 +42,17 @@ public class Hospital {
         }
     }
 
-    public void update(int cur_time){
-        for(int i = 0; i<patients.length; i++){
-            patients[i].update(cur_time);
-            nurses[i].update_nurse(cur_time);
+    public void update(int cur_time) {
+        for (int i = 0; i < patients.length; i++) {
+            patients[i].update(cur_time, this);
+        }
+        for(int n = 0; n < nurses.length; n++){
+            nurses[n].update_nurse(cur_time);
+        }
+    }
+
+    public void alert_enqueue(Alert al){
+        if(al.getImportance() == 3){
         }
     }
 }

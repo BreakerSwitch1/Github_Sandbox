@@ -1,5 +1,6 @@
+import java.util.Queue;
 import java.util.UUID;
-import java.util.random.RandomGenerator;
+import java.util.Random;
 
 public class Patient {
     private String patient_firstname;
@@ -48,15 +49,22 @@ public class Patient {
         return(""+first_name+ "" +last_name+ "," +sex+ "," +uuid+ ",");
 
     }
-    public void update(int current_time){
+    public void update(int current_time, Hospital h){
         for(int i = 0; i<devices.length;i++){
             if(devices[i] != null){
                 Observation obs = devices[i].read();
                 if(obs.emergency()){
                     Alert al = new Alert(obs,current_time,3);
+                    h.update(current_time);
+                    System.out.println("An alert has been made");
 
                 }
             }
+        }
+        Random rng_bell_call = new Random();
+        int bell_call_chance = rng_bell_call.nextInt(1,4);
+        if(bell_call_chance == 2){
+            System.out.println("Patient " +patient_firstname+ " rang the bell!");
         }
     }
     //Factory

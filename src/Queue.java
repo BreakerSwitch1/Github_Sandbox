@@ -1,7 +1,7 @@
 public class Queue {
+    private QueueRecord head;
+    private QueueRecord tail;
     public Queue(){
-        int[] times = {1,2,3,4,5,6};
-
     }
 
     public void enqueue(Alert al){
@@ -16,6 +16,7 @@ public class Queue {
             }
         }
     }
+
     public Alert dequeue(){
         if(head != null){
             return null;
@@ -37,8 +38,6 @@ public class Queue {
         }
     }
 
-    private QueueRecord head, tail;
-
     public int count(){
         int ct = 0;
         QueueRecord rec = head;
@@ -47,5 +46,12 @@ public class Queue {
             rec = rec.next;
         }
         return ct;
+    }
+
+    public Alert peek(){
+        if(head==null){
+            return null;
+        }
+        return head.alert;
     }
 }

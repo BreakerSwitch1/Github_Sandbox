@@ -19,4 +19,24 @@ class HospitalTest {
     @Test
     void add_patient() {
     }
+
+    @Test
+    void hospital_setup() {
+    }
+
+    @Test
+    void getNextAlert() {
+    }
+
+    @Test
+    void testPrint_test() {
+    }
+
+    @Test
+    void testUpdate() {
+    }
+
+    @Test
+    void alert_enqueue() {
+    }
 }
